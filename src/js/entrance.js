@@ -48,5 +48,15 @@ class Entrance extends Room {
                 textFeed("It's the new Encore GX. You notice the mirror caps are black.");
             }
         }
+        if (first == "TALK") {
+            if (comman == "TALK") {
+                textFeed("You have a pleasant conversation with yourself. The man here in the room with you is staring");
+                textFeed("at you. He looks concerned for your mental health.");
+            }
+            else if (second == "MAN" || second == "TRAINER" || (second == "SALES" && third == "TRAINER")) {
+                textFeed("'Hello! My name is SALES TRAINER and I'm here to teach you all about the new Encore GX! Look");
+                textFeed("at it's cool black mirror caps!'");
+            }
+        }
     }
 }
