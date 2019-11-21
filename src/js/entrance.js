@@ -50,8 +50,8 @@ class Entrance extends Room {
         }
         if (first == "TALK") {
             if (command == "TALK") {
-                textFeed("You have a pleasant conversation with yourself. The man here in the room with you is staring");
-                textFeed("at you. He looks concerned for your mental health.");
+                textFeed("You have a pleasant conversation with yourself. The man here in the room with you is");
+                textFeed("staring at you. He looks concerned for your mental health.");
             }
             else if (second == "MAN" || second == "TRAINER" || (second == "SALES" && third == "TRAINER")) {
                 textFeed("'Hello! My name is SALES TRAINER and I'm here to teach you all about the new Encore GX! Look");
