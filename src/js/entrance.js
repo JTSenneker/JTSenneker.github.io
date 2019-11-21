@@ -40,6 +40,9 @@ class Entrance extends Room {
         if (first == "LOOK") {
             if (command == "LOOK") {
                 this.roomLore();
+            } else if (command == "LOOK AT BLACK MIRROR CAPS" || command == "LOOK AT COOL BLACK MIRROR CAPS" || command == "LOOK AT MIRROR CAPS") {
+                textFeed("Would you look at that! Black mirror caps! Sales Trainer was right, they are pretty");
+                textFeed("cool. They look so much better in person than in a photo.");
             }
             else if (second == "MAN") {
                 textFeed("It's your sales trainer. He's got some note cards.");
