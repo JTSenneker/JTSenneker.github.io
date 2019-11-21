@@ -54,12 +54,12 @@ class Entrance extends Room {
                 textFeed("staring at you. He looks concerned for your mental health.");
             }
             else if (second == "MAN" || second == "TRAINER" || (second == "SALES" && third == "TRAINER")) {
-                textFeed("'Hello! My name is SALES TRAINER and I'm here to teach you all about the new Encore GX! Look");
-                textFeed("at it's cool black mirror caps!'");
+                textFeed("'Hello! My name is Sales Trainer and I'm here to teach you all about the new Encore GX!");
+                textFeed("Look at it's cool black mirror caps!'");
             }
             else if (second == "SALES") {
-                textFeed("You turn to the man and say 'Let's talk sales.' The man looks at you confused and asks 'Why");
-                textFeed("do you want to talk about me?'");
+                textFeed("You turn to the man and say 'Let's talk sales.' The man looks at you confused and asks");
+                textFeed("'Why do you want to talk about me?'");
                 this.processCommand("TALK MAN");
             }
             else if (second == "TO") {
