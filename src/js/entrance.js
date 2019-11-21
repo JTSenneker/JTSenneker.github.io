@@ -49,7 +49,7 @@ class Entrance extends Room {
             }
         }
         if (first == "TALK") {
-            if (comman == "TALK") {
+            if (command == "TALK") {
                 textFeed("You have a pleasant conversation with yourself. The man here in the room with you is staring");
                 textFeed("at you. He looks concerned for your mental health.");
             }
