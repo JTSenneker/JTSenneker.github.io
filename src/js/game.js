@@ -5,7 +5,7 @@ var config = {
     width: 970,
     height: 546,
     backgroundColor: 0x001c00,
-    scene: [Room],
+    scene: [Entrance],
     preventDefault: true
 
 }
