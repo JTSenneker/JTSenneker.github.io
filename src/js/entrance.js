@@ -45,7 +45,7 @@ class Entrance extends Room {
                 textFeed("It's your sales trainer. He's got some note cards.");
             }
             else if (second == "VEHICLE") {
-                textFeed("It's the new Encore GX.")
+                textFeed("It's the new Encore GX. You notice the mirror caps are black.");
             }
         }
     }
