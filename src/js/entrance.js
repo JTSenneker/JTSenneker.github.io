@@ -24,6 +24,7 @@ class Entrance extends Room {
             }
             else if (second == "NORTH") {
                 textFeed("You go NORTH.");
+                this.scene.start('office');
             }
             else if (second == "SOUTH") {
                 textFeed("You go SOUTH.");
