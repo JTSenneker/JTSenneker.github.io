@@ -16,7 +16,7 @@ class Entrance extends Room {
         //Split up the command to make things easier
         let first = command.split(" ")[0];
         let second = command.split(" ")[1];
-        let thrid = command.split(" ")[2];
+        let third = command.split(" ")[2];
         let fourth = command.split(" ")[3];
         if (first == "GO" || first == "WALK") {
             if (command == "GO" || command == "WALK") {
