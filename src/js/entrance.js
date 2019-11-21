@@ -57,6 +57,25 @@ class Entrance extends Room {
                 textFeed("'Hello! My name is SALES TRAINER and I'm here to teach you all about the new Encore GX! Look");
                 textFeed("at it's cool black mirror caps!'");
             }
+            else if (second == "SALES") {
+                textFeed("You turn to the man and say 'Let's talk sales.' The man looks at you confused and asks 'Why");
+                textFeed("do you want to talk about me?'");
+                this.processCommand("TALK MAN");
+            }
+            else if (second == "TO") {
+                if (command == "TALK TO") {
+                    textFeed("Talk to who? You started saying you wanted to talk to somebody, but then you sort of just");
+                    textFeed("trailed off.")
+                } else {
+                    switch (third) {
+                        case "SALES":
+                        case "TRAINER":
+                        case "MAN":
+                            this.processCommand("TALK MAN");
+                            break;
+                    }
+                }
+            }
         }
     }
 }
