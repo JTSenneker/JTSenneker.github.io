@@ -5,13 +5,13 @@ class Scene1 extends Phaser.Scene {
     this.scene2 = null;
   }
   preload() {
-    this.load.image("background", "src/WoF/assets/images/Board.png");
-    this.load.image("playButton", "src/WoF/assets/images/Play Button.png");
-    this.load.image("spinButton", "src/WoF.assets/images/SpinButton.png");
-    this.load.image("vowelButton", "src/WoF/assets/images/VowelButton.png");
-    this.load.image("solveButton", "src/WoF/assets/images/SolveButton.png");
-    this.load.image("scoreUI", "src/WoF/assets/images/ScoreUI.png");
-    this.load.spritesheet("wordTile", 'src/WoF/assets/images/wordTile.png', { frameWidth: 32, frameHeight: 64 });
+    this.load.image("background", "src/WoF/src/assets/images/Board.png");
+    this.load.image("playButton", "src/WoF/src/assets/images/Play Button.png");
+    this.load.image("spinButton", "src/WoF.src/assets/images/SpinButton.png");
+    this.load.image("vowelButton", "src/WoF/src/assets/images/VowelButton.png");
+    this.load.image("solveButton", "src/WoF/src/assets/images/SolveButton.png");
+    this.load.image("scoreUI", "src/WoF/src/assets/images/ScoreUI.png");
+    this.load.spritesheet("wordTile", 'src/WoF/src/assets/images/wordTile.png', { frameWidth: 32, frameHeight: 64 });
 
   }
   create() {
