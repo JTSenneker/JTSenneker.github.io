@@ -45,11 +45,11 @@ class Scene2 extends Phaser.Scene {
       graphics.strokePath();
       var prizeText = this.add.text(0, 0, gameOptions.slices[i].text);
       prizeText.rotation = startDegrees + (gameOptions.slices[i].degrees / 2);
-      prizeText.x = Math.cos(prizeText.rotation * (180 / Math.PI)) * 200;
-      prizeText.y = Math.sin(prizeText.rotation * (180 / Math.PI)) * 200;
-
-      startDegrees += gameOptions.slices[i].degrees;
+      prizeText.x = Math.cos(prizeText.rotation) * 200;
+      prizeText.y = Math.sin(prizeText.rotation) * 200;
       this.wheelContainer.add(prizeText);
+      startDegrees += gameOptions.slices[i].degrees;
+
     }
     graphics.generateTexture("wheel", (gameOptions.wheelRadius + gameOptions.strokeWidth) * 2, (gameOptions.wheelRadius + gameOptions.strokeWidth) * 2);
 
