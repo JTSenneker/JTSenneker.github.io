@@ -47,6 +47,7 @@ class Scene2 extends Phaser.Scene {
       prizeText.rotation = startDegrees;
 
       startDegrees += gameOptions.slices[i].degrees;
+      this.wheelContainer.add(prizeText);
     }
     graphics.generateTexture("wheel", (gameOptions.wheelRadius + gameOptions.strokeWidth) * 2, (gameOptions.wheelRadius + gameOptions.strokeWidth) * 2);
 
