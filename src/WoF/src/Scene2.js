@@ -118,7 +118,7 @@ class Scene2 extends Phaser.Scene {
   }
   setTextOrientationVertical(text) {
     for (var i = 0; i < text.length; i++) {
-      text[i] += "\n";
+      text = text.substr(0, i) + "\n" + text.substr(i);
     }
     return text;
   }
