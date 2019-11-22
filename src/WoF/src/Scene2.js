@@ -44,7 +44,7 @@ class Scene2 extends Phaser.Scene {
       // stroking the slice
       graphics.strokePath();
       var prizeText = this.add.text(0, 0, gameOptions.slices[i].text);
-      prizeText.rotation = startDegrees;
+      prizeText.rotation = startDegree + (gameOptions.slices[i].degrees / 2);
       prizeText.x = Math.cos(prizeText.rotation * (180 / Math.PI)) * 200;
       prizeText.y = Math.sin(prizeText.rotation * (180 / Math.PI)) * 200;
 
