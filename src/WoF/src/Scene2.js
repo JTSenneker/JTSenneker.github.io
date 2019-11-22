@@ -46,8 +46,8 @@ class Scene2 extends Phaser.Scene {
       var prizeText = this.add.text(0, 0, gameOptions.slices[i].text);
       prizeText.setOrigin(.5);
       prizeText.setAlign('center');
-      prizeText.x = Math.cos(startDegrees + (gameOptions.slices[i].degrees)) * 200;
-      prizeText.y = Math.sin(startDegrees + (gameOptions.slices[i].degrees)) * 200;
+      prizeText.x = Math.cos(Phaser.Math.DegToRad(startDegrees + (gameOptions.slices[i].degrees))) * 200;
+      prizeText.y = Math.sin(Phaser.Math.DegToRad(startDegrees + (gameOptions.slices[i].degrees))) * 200;
       this.wheelContainer.add(prizeText);
       startDegrees += gameOptions.slices[i].degrees;
 
