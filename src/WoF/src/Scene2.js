@@ -44,9 +44,9 @@ class Scene2 extends Phaser.Scene {
       // stroking the slice
       graphics.strokePath();
       var prizeText = this.add.text(0, 0, gameOptions.slices[i].text);
-      prizeText.rotation = startDegrees + (gameOptions.slices[i].degrees / 2);
-      prizeText.x = Math.cos(prizeText.rotation) * 200;
-      prizeText.y = Math.sin(prizeText.rotation) * 200;
+
+      prizeText.x = Math.cos(startDegrees + (gameOptions.slices[i].degrees)) * 200;
+      prizeText.y = Math.sin(startDegrees + (gameOptions.slices[i].degrees)) * 200;
       this.wheelContainer.add(prizeText);
       startDegrees += gameOptions.slices[i].degrees;
 
@@ -58,6 +58,7 @@ class Scene2 extends Phaser.Scene {
     this.wheelContainer.sendToBack(wheel);
     this.canSpin = true;
     this.input.on('pointerdown', this.spinWheel, this);
+    Console.log("0.0.1");
   }
 
   spinWheel() {
