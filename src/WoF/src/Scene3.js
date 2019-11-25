@@ -90,6 +90,7 @@ class Scene3 extends Phaser.Scene {
             row4[i].letter = puzzle.row4[i];
             this.puzzleBoxes.push(row4[i]);
         }
+        this.currentLetter = this.puzzleBoxes[0];
     }
 
     setupButtons() {
