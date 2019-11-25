@@ -60,7 +60,7 @@ class Scene2 extends Phaser.Scene {
     this.wheelContainer.add(wheel);
     this.wheelContainer.sendToBack(wheel);
     this.wheelContainerContainer.add(this.wheelContainer);
-    this.wheelContainerContainer.setScale(0, .5);
+    this.wheelContainerContainer.setScale(1, .5);
     this.canSpin = true;
     this.input.on('pointerdown', this.spinWheel, this);
     console.log("0.0.3");
