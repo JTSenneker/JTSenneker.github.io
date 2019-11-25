@@ -59,6 +59,7 @@ class Scene2 extends Phaser.Scene {
     var wheel = this.add.sprite(0, 0, "wheel");
     this.wheelContainer.add(wheel);
     this.wheelContainer.sendToBack(wheel);
+    this.wheelContainer.setOrigin(.5);
     this.wheelContainerContainer.add(this.wheelContainer);
     this.wheelContainerContainer.setScale(1, .5);
     this.canSpin = true;
