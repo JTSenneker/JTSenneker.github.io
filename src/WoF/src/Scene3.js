@@ -109,9 +109,8 @@ class Scene3 extends Phaser.Scene {
             consonantButtons[i].setInteractive();
             consonantButtons[i].on('pointerup', function () {
                 if (!gameOptions.canSelect && !gameOptions.solving) return;
-                console.log(this.text);
+                if (!gameOptions.solving) this.text = " ";
                 scene.CheckLetter(this.text);
-                if (!gameOptions.solving) this.text = " "
                 gameOptions.canSelect = false;
             });
         }
@@ -123,8 +122,6 @@ class Scene3 extends Phaser.Scene {
             vowelButtons[i].setInteractive();
             vowelButtons[i].on('pointerup', function () {
                 if (!gameOptions.buyingVowel && !gameOptions.solving) return;
-
-
                 if (!gameOptions.solving) this.text = " ";
                 scene.CheckLetter(this.text);
                 gameOptions.score -= 250;
@@ -137,7 +134,6 @@ class Scene3 extends Phaser.Scene {
     CheckLetter(letter) {
         if (!gameOptions.solving) {
             for (var j = this.puzzleBoxes.length - 1; j >= 0; j--) {
-
                 if (this.puzzleBoxes[j].letter.toUpperCase() == letter) {
                     this.add.text(this.puzzleBoxes[j].x, this.puzzleBoxes[j].y, letter, { fontSize: '36px', fill: '#4B4B4B' });
                     if (!this.isVowel(letter)) gameOptions.score += gameOptions.scoreMultiplier;
