@@ -109,8 +109,9 @@ class Scene3 extends Phaser.Scene {
             consonantButtons[i].setInteractive();
             consonantButtons[i].on('pointerup', function () {
                 if (!gameOptions.canSelect && !gameOptions.solving) return;
+                var letter = this.text;
                 if (!gameOptions.solving) this.text = " ";
-                scene.CheckLetter(this.text);
+                scene.CheckLetter(letter);
                 gameOptions.canSelect = false;
             });
         }
@@ -122,8 +123,9 @@ class Scene3 extends Phaser.Scene {
             vowelButtons[i].setInteractive();
             vowelButtons[i].on('pointerup', function () {
                 if (!gameOptions.buyingVowel && !gameOptions.solving) return;
+                var letter = this.text;
                 if (!gameOptions.solving) this.text = " ";
-                scene.CheckLetter(this.text);
+                scene.CheckLetter(letter);
                 if (!gameOptions.solving) gameOptions.score -= 250;
                 gameOptions.canSelect = false;
                 gameOptions.buyingVowel = false;
