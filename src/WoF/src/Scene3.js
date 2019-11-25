@@ -7,6 +7,7 @@ class Scene3 extends Phaser.Scene {
         this.parent = parent;
         this.WIDTH = 800;
         this.HEIGHT = 600;
+        this.puzzleBoxes = [];
     }
     create() {
         this.cameras.main.setViewport(this.parent.x, this.parent.y, this.WIDTH, this.HEIGHT);
@@ -28,6 +29,10 @@ class Scene3 extends Phaser.Scene {
             row2[i].letter = " ";
             row3[i].letter = " ";
             row4[i].letter = " ";
+            row1[i].resolved = false;
+            row2[i].resolved = false;
+            row3[i].resolved = false;
+            row4[i].resolved = false;
             this.anims.create({
                 key: 'noLetter',
                 frames: [{ key: 'wordTile', frame: 0 }],
@@ -38,39 +43,52 @@ class Scene3 extends Phaser.Scene {
                 key: 'letter',
                 frames: [{ key: 'wordTile', frame: 1 }],
                 frameRate: 20
-            })
+            });
         }
         for (var i = 0; i < 14; i++) {
 
             if (i > puzzle.row1.length - 1) break;
-            if (puzzle.row1[i] == " ") continue;
+            if (puzzle.row1[i] == " ") {
+                row1[i].resolved = true;
+                continue;
+            }
             row1[i].anims.play('letter');
             row1[i].letter = puzzle.row1[i];
+            this.puzzleBoxes.push(row1[i]);
 
         }
         for (var i = 0; i < 14; i++) {
 
             if (i > puzzle.row2.length - 1) break;
-            if (puzzle.row2[i] == " ") continue;
+            if (puzzle.row2[i] == " ") {
+                row2[i].resolved = true;
+                continue;
+            }
             row2[i].anims.play('letter');
             row2[i].letter = puzzle.row2[i];
-
+            this.puzzleBoxes.push(row2[i]);
         }
         for (var i = 0; i < 14; i++) {
 
             if (i > puzzle.row3.length - 1) break;
-            if (puzzle.row3[i] == " ") continue;
+            if (puzzle.row3[i] == " ") {
+                row3[i].resolved = true;
+                continue;
+            }
             row3[i].anims.play('letter');
             row3[i].letter = puzzle.row3[i];
-
+            this.puzzleBoxes.push(row3[i]);
         }
         for (var i = 0; i < 14; i++) {
 
             if (i > puzzle.row4.length - 1) break;
-            if (puzzle.row4[i] == " ") continue;
+            if (puzzle.row4[i] == " ") {
+                row4[i].resolved = true;
+                continue;
+            }
             row4[i].anims.play('letter');
             row4[i].letter = puzzle.row4[i];
-
+            this.puzzleBoxes.push(row4[i]);
         }
     }
 
@@ -89,10 +107,10 @@ class Scene3 extends Phaser.Scene {
 
             consonantButtons[i].setInteractive();
             consonantButtons[i].on('pointerup', function () {
-                if (!gameOptions.canSelect) return;
+                if (!gameOptions.canSelect || !gameOptions.solving) return;
                 console.log(this.text);
                 scene.CheckLetter(this.text);
-                this.text = " "
+                if (!gameOptions.solving) this.text = " "
                 gameOptions.canSelect = false;
             });
         }
@@ -103,10 +121,10 @@ class Scene3 extends Phaser.Scene {
 
             vowelButtons[i].setInteractive();
             vowelButtons[i].on('pointerup', function () {
-                if (!gameOptions.buyingVowel) return;
+                if (!gameOptions.buyingVowel || !gameOptions.solving) return;
 
                 scene.CheckLetter(this.text);
-                this.text = " "
+                if (!gameOptions.solving) this.text = " ";
                 gameOptions.score -= 250;
                 gameOptions.canSelect = false;
                 gameOptions.buyingVowel = false;
@@ -115,33 +133,41 @@ class Scene3 extends Phaser.Scene {
     }
 
     CheckLetter(letter) {
+        if (!gameOptions.solving) {
+            for (var j = row1.length - 1; j >= 0; j--) {
 
-        for (var j = row1.length - 1; j >= 0; j--) {
-
-            if (row1[j].letter.toUpperCase() == letter) {
-                this.add.text(row1[j].x, row1[j].y, letter, { fontSize: '36px', fill: '#4B4B4B' });
-                if (!this.isVowel(letter)) gameOptions.score += gameOptions.scoreMultiplier;
+                if (row1[j].letter.toUpperCase() == letter) {
+                    this.add.text(row1[j].x, row1[j].y, letter, { fontSize: '36px', fill: '#4B4B4B' });
+                    if (!this.isVowel(letter)) gameOptions.score += gameOptions.scoreMultiplier;
+                }
             }
-        }
-        for (var j = row2.length - 1; j >= 0; j--) {
+            for (var j = row2.length - 1; j >= 0; j--) {
 
-            if (row2[j].letter.toUpperCase() == letter) {
-                this.add.text(row2[j].x, row2[j].y, letter, { fontSize: '36px', fill: '#4B4B4B' });
-                if (!this.isVowel(letter)) gameOptions.score += gameOptions.scoreMultiplier;
+                if (row2[j].letter.toUpperCase() == letter) {
+                    this.add.text(row2[j].x, row2[j].y, letter, { fontSize: '36px', fill: '#4B4B4B' });
+                    if (!this.isVowel(letter)) gameOptions.score += gameOptions.scoreMultiplier;
+                }
             }
-        }
-        for (var j = row3.length - 1; j >= 0; j--) {
+            for (var j = row3.length - 1; j >= 0; j--) {
 
-            if (row3[j].letter.toUpperCase() == letter) {
-                this.add.text(row3[j].x, row3[j].y, letter, { fontSize: '36px', fill: '#4B4B4B' });
-                if (!this.isVowel(letter)) gameOptions.score += gameOptions.scoreMultiplier;
+                if (row3[j].letter.toUpperCase() == letter) {
+                    this.add.text(row3[j].x, row3[j].y, letter, { fontSize: '36px', fill: '#4B4B4B' });
+                    if (!this.isVowel(letter)) gameOptions.score += gameOptions.scoreMultiplier;
+                }
             }
-        }
-        for (var j = row4.length - 1; j >= 0; j--) {
+            for (var j = row4.length - 1; j >= 0; j--) {
 
-            if (row4[j].letter.toUpperCase() == letter) {
+                if (row4[j].letter.toUpperCase() == letter) {
+                    this.add.text(row4[j].x, row4[j].y, letter, { fontSize: '36px', fill: '#4B4B4B' });
+                    if (!this.isVowel(letter)) gameOptions.score += gameOptions.scoreMultiplier;
+                }
+            }
+        } else {
+            if (this.currentLetter.letter.toUpperCase() == letter) {
                 this.add.text(row4[j].x, row4[j].y, letter, { fontSize: '36px', fill: '#4B4B4B' });
-                if (!this.isVowel(letter)) gameOptions.score += gameOptions.scoreMultiplier;
+                this.currentLetter.resolved = true;
+            } else {
+                gameOptions.solving = false;
             }
         }
     }
@@ -157,9 +183,25 @@ class Scene3 extends Phaser.Scene {
                 vowelButtons[i].alpha = .25;
             } else vowelButtons[i].alpha = 1;
         }
-    }
+        if (gameOptions.solving) {
+            for (var i = consonantButtons.length - 1; i >= 0; i--) {
+                consonantButtons[i].alpha = 1;
+            }
 
+            for (var i = vowelButtons.length - 1; i >= 0; i--) {
+                vowelButtons[i].alpha = 1;
+            }
+            for (var i = 0; i < this.puzzleBoxes.length; i++) {
+                if (!this.puzzleBoxes[i].resolved) {
+                    this.currentLetter = this.puzzleBoxes[i];
+                    this.currentLetter.tint = 0x0000ff;
+                    break;
+                }
+            }
+        }
+    }
     isVowel(letter) {
         return (letter == "A" || letter == "E" || letter == "I" || letter == "O" || letter == "U")
     }
+
 }

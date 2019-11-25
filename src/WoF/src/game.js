@@ -81,6 +81,7 @@ const gameOptions = {
     canSelect: false,
     atWheel: false,
     buyingVowel: false,
+    solving: false,
     scoreMultiplier: 0,
     score: 0,
     //wheel rotation duration (ms)

@@ -49,6 +49,12 @@ class Scene1 extends Phaser.Scene {
       }
     });
 
+    this.solveButton.on('pointerup', function () {
+      if (!gameOptions.atWheel) {
+        gameOptions.solving = true;
+      }
+    });
+
     this.input.on('pointerdown', function () {
       if (gameOptions.atWheel && !gameOptions.isSpinning) {
         this.scene.switchToBoard();
