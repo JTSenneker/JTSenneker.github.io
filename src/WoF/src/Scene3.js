@@ -164,7 +164,7 @@ class Scene3 extends Phaser.Scene {
             }
         } else {
             if (this.currentLetter.letter.toUpperCase() == letter) {
-                this.add.text(currentLetter.x, currentLetter.y, letter, { fontSize: '36px', fill: '#4B4B4B' });
+                this.add.text(this.currentLetter.x, this.currentLetter.y, letter, { fontSize: '36px', fill: '#4B4B4B' });
                 this.currentLetter.resolved = true;
             } else {
                 gameOptions.solving = false;
