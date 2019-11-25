@@ -64,6 +64,7 @@ class Scene1 extends Phaser.Scene {
     var win = this.add.zone(x, y, func.WIDTH, func.HEIGHT).setOrigin(0.5);
     var demo = new func(handle, win);
     this.scene.add(handle, demo, true);
+    win.setScale(.5);
     return demo;
   }
   update() {
