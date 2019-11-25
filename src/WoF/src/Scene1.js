@@ -94,6 +94,7 @@ class Scene1 extends Phaser.Scene {
           onComplete: function (tween) {
             gameOptions.canSpin = true;
             gameOptions.atWheel = true;
+            gameOptions.isSpinning = true;
           }
         });
       }

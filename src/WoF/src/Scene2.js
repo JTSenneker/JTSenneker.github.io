@@ -65,7 +65,7 @@ class Scene2 extends Phaser.Scene {
 
   spinWheel() {
     if (this.canSpin && gameOptions.canSpin) {
-
+      gameOptions.isSpinning = true;
       var rounds = Phaser.Math.Between(gameOptions.wheelRounds.min, gameOptions.wheelRounds.max);
       var degrees = Phaser.Math.Between(0, 360);
       var backDegrees = Phaser.Math.Between(gameOptions.backSpin.min, gameOptions.backSpin.max);
