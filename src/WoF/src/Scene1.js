@@ -73,6 +73,7 @@ class Scene1 extends Phaser.Scene {
     //this.cameras.main.centerOn(gameOptions.camTarget.x,gameOptions.camTarget.y);
     this.scene2.refresh();
     this.scene3.refresh();
+    this.scene.bringToTop();
     this.score.text = "$" + gameOptions.score;
   }
 
