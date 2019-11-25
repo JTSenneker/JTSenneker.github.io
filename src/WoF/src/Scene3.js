@@ -124,8 +124,9 @@ class Scene3 extends Phaser.Scene {
             vowelButtons[i].on('pointerup', function () {
                 if (!gameOptions.buyingVowel && !gameOptions.solving) return;
 
-                scene.CheckLetter(this.text);
+
                 if (!gameOptions.solving) this.text = " ";
+                scene.CheckLetter(this.text);
                 gameOptions.score -= 250;
                 gameOptions.canSelect = false;
                 gameOptions.buyingVowel = false;
@@ -135,31 +136,10 @@ class Scene3 extends Phaser.Scene {
 
     CheckLetter(letter) {
         if (!gameOptions.solving) {
-            for (var j = row1.length - 1; j >= 0; j--) {
+            for (var j = this.puzzleBoxes.length - 1; j >= 0; j--) {
 
-                if (row1[j].letter.toUpperCase() == letter) {
-                    this.add.text(row1[j].x, row1[j].y, letter, { fontSize: '36px', fill: '#4B4B4B' });
-                    if (!this.isVowel(letter)) gameOptions.score += gameOptions.scoreMultiplier;
-                }
-            }
-            for (var j = row2.length - 1; j >= 0; j--) {
-
-                if (row2[j].letter.toUpperCase() == letter) {
-                    this.add.text(row2[j].x, row2[j].y, letter, { fontSize: '36px', fill: '#4B4B4B' });
-                    if (!this.isVowel(letter)) gameOptions.score += gameOptions.scoreMultiplier;
-                }
-            }
-            for (var j = row3.length - 1; j >= 0; j--) {
-
-                if (row3[j].letter.toUpperCase() == letter) {
-                    this.add.text(row3[j].x, row3[j].y, letter, { fontSize: '36px', fill: '#4B4B4B' });
-                    if (!this.isVowel(letter)) gameOptions.score += gameOptions.scoreMultiplier;
-                }
-            }
-            for (var j = row4.length - 1; j >= 0; j--) {
-
-                if (row4[j].letter.toUpperCase() == letter) {
-                    this.add.text(row4[j].x, row4[j].y, letter, { fontSize: '36px', fill: '#4B4B4B' });
+                if (this.puzzleBoxes[j].letter.toUpperCase() == letter) {
+                    this.add.text(this.puzzleBoxes[j].x, this.puzzleBoxes[j].y, letter, { fontSize: '36px', fill: '#4B4B4B' });
                     if (!this.isVowel(letter)) gameOptions.score += gameOptions.scoreMultiplier;
                 }
             }
