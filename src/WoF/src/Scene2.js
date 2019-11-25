@@ -18,7 +18,7 @@ class Scene2 extends Phaser.Scene {
 
     //container to group wheel and text
     this.wheelContainer = this.add.container(config.width / 2, config.height / 2);
-    this.wheelContainerContainer = this.add.container(0, 0);
+    this.wheelContainerContainer = this.add.container(0, 100);
 
     for (var i = 0; i < gameOptions.slices.length; i++) {
       var startColor = Phaser.Display.Color.ValueToColor(gameOptions.slices[i].startColor);
@@ -60,10 +60,10 @@ class Scene2 extends Phaser.Scene {
     this.wheelContainer.add(wheel);
     this.wheelContainer.sendToBack(wheel);
     this.wheelContainerContainer.add(this.wheelContainer);
-    this.wheelContainerContainer.setScale(1, .5);
+    this.wheelContainerContainer.setScale(1, .35);
     this.canSpin = true;
     this.input.on('pointerdown', this.spinWheel, this);
-    console.log("0.0.3");
+    console.log("0.0.4");
   }
 
   spinWheel() {
