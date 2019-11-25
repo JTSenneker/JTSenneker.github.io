@@ -11,14 +11,16 @@ class Scene1 extends Phaser.Scene {
     this.load.image("vowelButton", "src/WoF/src/assets/images/VowelButton.png");
     this.load.image("solveButton", "src/WoF/src/assets/images/SolveButton.png");
     this.load.image("scoreUI", "src/WoF/src/assets/images/ScoreUI.png");
+    this.load.image("background", "src/WoF/src/assets/images/bg.png");
     this.load.spritesheet("wordTile", 'src/WoF/src/assets/images/wordTile.png', { frameWidth: 32, frameHeight: 64 });
 
   }
   create() {
+
     this.scene2 = this.createWindow(Scene2, 800, 0);
-    this.scene3 = this.createWindow(Scene3, 175, 0);
+    this.scene3 = this.createWindow(Scene3, 175, 164);
     this.spinButton = this.scene3.add.image(350, 450, 'spinButton');
-    this.vowelButton = this.scene3.add.image(420, 480, 'vowelButton');
+    this.vowelButton = this.scene3.add.image(420, 450, 'vowelButton');
     this.solveButton = this.scene3.add.image(490, 450, 'solveButton');
 
     this.vowelButton.setInteractive();
