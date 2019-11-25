@@ -5,7 +5,6 @@ class Scene1 extends Phaser.Scene {
     this.scene2 = null;
   }
   preload() {
-    this.load.image("background", "src/WoF/src/assets/images/Board.png");
     this.load.image("playButton", "src/WoF/src/assets/images/Play Button.png");
     this.load.image("spinButton", "src/WoF/src/assets/images/SpinButton.png");
     this.load.image("vowelButton", "src/WoF/src/assets/images/VowelButton.png");
