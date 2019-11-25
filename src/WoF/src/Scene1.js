@@ -17,7 +17,7 @@ class Scene1 extends Phaser.Scene {
   create() {
 
     this.scene2 = this.createWindow(Scene2, 800, 0);
-    this.scene3 = this.createWindow(Scene3, 174, 118);
+    this.scene3 = this.createWindow(Scene3, 0, 0);
     this.spinButton = this.scene3.add.image(350, 450, 'spinButton');
     this.vowelButton = this.scene3.add.image(420, 450, 'vowelButton');
     this.solveButton = this.scene3.add.image(490, 450, 'solveButton');
@@ -68,7 +68,7 @@ class Scene1 extends Phaser.Scene {
   }
   createWindow(func, x, y) {
     var handle = 'window' + this.count++;
-    var win = this.add.zone(x, y, func.WIDTH, func.HEIGHT).setOrigin(0.5);
+    var win = this.add.zone(x, y, func.WIDTH, func.HEIGHT).setOrigin(0);
     var demo = new func(handle, win);
     this.scene.add(handle, demo, true);
     win.setScale(.5);
@@ -117,7 +117,7 @@ class Scene1 extends Phaser.Scene {
       onComplete: function (tween) {
         this.tweens.add({
           targets: [this.scene3.parent],
-          x: 174,
+          x: 0,
           druation: 5,
           ease: "Cubic.easeOut",
           callbackScope: this,

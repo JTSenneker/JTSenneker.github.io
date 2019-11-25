@@ -11,7 +11,7 @@ class Scene3 extends Phaser.Scene {
     }
     create() {
         this.cameras.main.setViewport(this.parent.x, this.parent.y, this.WIDTH, this.HEIGHT);
-        this.add.image(-174, -118, 'background').setOrigin(0);
+        this.add.image(0, 0, 'background').setOrigin(0);
         this.setupPuzzle(puzzles[0]);
         this.setupButtons();
     }
@@ -22,10 +22,10 @@ class Scene3 extends Phaser.Scene {
     setupPuzzle(puzzle) {
         category = puzzle.category;
         for (var i = 0; i < 14; i++) {
-            row1[i] = this.add.sprite(i * 32, 0, 'wordTile').setOrigin(0, 0);
-            row2[i] = this.add.sprite(i * 32, 64, 'wordTile').setOrigin(0, 0);
-            row3[i] = this.add.sprite(i * 32, 128, 'wordTile').setOrigin(0, 0);
-            row4[i] = this.add.sprite(i * 32, 192, 'wordTile').setOrigin(0, 0);
+            row1[i] = this.add.sprite((i * 32) + 174, 118 + 0, 'wordTile').setOrigin(0, 0);
+            row2[i] = this.add.sprite((i * 32) + 174, 118 + 64, 'wordTile').setOrigin(0, 0);
+            row3[i] = this.add.sprite((i * 32) + 174, 118 + 128, 'wordTile').setOrigin(0, 0);
+            row4[i] = this.add.sprite((i * 32) + 174, 118 + 192, 'wordTile').setOrigin(0, 0);
             row1[i].letter = " ";
             row2[i].letter = " ";
             row3[i].letter = " ";
@@ -96,11 +96,11 @@ class Scene3 extends Phaser.Scene {
 
     setupButtons() {
         for (var i = 21; i >= 0; i--) {
-            var button = this.add.text(i * 24, 300, consonants[i], { fontSize: '24px', fill: '#FFF' });
+            var button = this.add.text(i * 24 + 174, 418, consonants[i], { fontSize: '24px', fill: '#FFF' });
             consonantButtons[i] = button;
         }
         for (var i = 5; i >= 0; i--) {
-            var button = this.add.text(i * 24, 324, vowels[i], { fontSize: '24px', fill: '#FFF' });
+            var button = this.add.text(i * 24 + 174, 442, vowels[i], { fontSize: '24px', fill: '#FFF' });
             vowelButtons[i] = button;
         }
 
