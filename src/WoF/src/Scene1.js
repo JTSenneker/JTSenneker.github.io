@@ -17,7 +17,7 @@ class Scene1 extends Phaser.Scene {
   create() {
 
     this.scene2 = this.createWindow(Scene2, 800, 0);
-    this.scene3 = this.createWindow(Scene3, 175, 119);
+    this.scene3 = this.createWindow(Scene3, 175, 118);
     this.spinButton = this.scene3.add.image(350, 450, 'spinButton');
     this.vowelButton = this.scene3.add.image(420, 450, 'vowelButton');
     this.solveButton = this.scene3.add.image(490, 450, 'solveButton');
@@ -26,10 +26,11 @@ class Scene1 extends Phaser.Scene {
     this.solveButton.setInteractive();
     this.spinButton.setInteractive();
 
+    this.background = this.add.image(0, 0, 'background').setOrigin(0);
     this.scoreContainer = this.add.container(0, 0);
     this.scoreUI = this.add.image(0, 0, 'scoreUI').setOrigin(0);
     this.score = this.add.text(34, 48, "$100", { fontSize: '12px', fill: '#FFF' });
-    this.background = this.add.image(0, 0, 'background').setOrigin(0);
+
     this.scoreContainer.add([this.scoreUI, this.score]);
     this.scoreContainer.x = 50;
     this.scoreContainer.y = 500;
