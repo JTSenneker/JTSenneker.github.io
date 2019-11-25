@@ -26,7 +26,7 @@ class Scene1 extends Phaser.Scene {
     this.solveButton.setInteractive();
     this.spinButton.setInteractive();
 
-    this.background = this.add.image(0, 0, 'background').setOrigin(0);
+    this.background = this.add.image(174, 118, 'background').setOrigin(-174, -118);
     this.scoreContainer = this.add.container(0, 0);
     this.scoreUI = this.add.image(0, 0, 'scoreUI').setOrigin(0);
     this.score = this.add.text(34, 48, "$100", { fontSize: '12px', fill: '#FFF' });
@@ -117,7 +117,7 @@ class Scene1 extends Phaser.Scene {
       onComplete: function (tween) {
         this.tweens.add({
           targets: [this.scene3.parent, this.background],
-          x: 175,
+          x: 174,
           druation: 5,
           ease: "Cubic.easeOut",
           callbackScope: this,
