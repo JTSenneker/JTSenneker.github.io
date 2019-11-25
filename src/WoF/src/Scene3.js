@@ -140,9 +140,9 @@ class Scene3 extends Phaser.Scene {
                 if (this.puzzleBoxes[j].resolved) continue;
 
                 if (this.puzzleBoxes[j].letter.toUpperCase() == letter) {
-                    console.log(this.puzzleBoxes[j].letter);
                     this.add.text(this.puzzleBoxes[j].x, this.puzzleBoxes[j].y, letter, { fontSize: '36px', fill: '#4B4B4B' });
                     if (!this.isVowel(letter)) gameOptions.score += gameOptions.scoreMultiplier;
+                    this.puzzleBoxes[j].resolved = true;
                 }
             }
         } else {
