@@ -17,7 +17,7 @@ class Scene1 extends Phaser.Scene {
   create() {
 
     this.scene2 = this.createWindow(Scene2, 800, 0);
-    this.scene3 = this.createWindow(Scene3, 175, 118);
+    this.scene3 = this.createWindow(Scene3, 174, 118);
     this.spinButton = this.scene3.add.image(350, 450, 'spinButton');
     this.vowelButton = this.scene3.add.image(420, 450, 'vowelButton');
     this.solveButton = this.scene3.add.image(490, 450, 'solveButton');
@@ -84,7 +84,7 @@ class Scene1 extends Phaser.Scene {
 
   switchToWheel() {
     this.tweens.add({
-      targets: [this.scene3.parent],
+      targets: [this.scene3.parent, this.background],
       x: -800,
       druation: 5,
       ease: "Cubic.easeOut",
@@ -116,7 +116,7 @@ class Scene1 extends Phaser.Scene {
       callbackScope: this,
       onComplete: function (tween) {
         this.tweens.add({
-          targets: [this.scene3.parent],
+          targets: [this.scene3.parent, this.background],
           x: 175,
           druation: 5,
           ease: "Cubic.easeOut",
