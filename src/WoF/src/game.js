@@ -15,8 +15,8 @@ const puzzles = [
 
     }
 ];
-const vowels = ['A','E','I','O','U'];
-const consonants = ['B','C','D','F','G','H','J','K','L','M','N','P','Q','R','S','T','V','W','X','Y','Z'];
+const vowels = ['A', 'E', 'I', 'O', 'U'];
+const consonants = ['B', 'C', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'V', 'W', 'X', 'Y', 'Z'];
 let row1 = [];
 let row2 = [];
 let row3 = [];
@@ -27,7 +27,7 @@ let category = "";
 const gameOptions = {
     //configure slices
     //array of JSON objects
-    slices:[
+    slices: [
         {
             degrees: 60,
             startColor: 0xff0000,
@@ -74,38 +74,38 @@ const gameOptions = {
             endColor: 0x00ee22,
             rings: 8,
             text: "600",
-            score: 500
+            score: 600
         }
     ],
     canSpin: false,
     canSelect: false,
-    atWheel:false,
-    buyingVowel:false,
-    scoreMultiplier:0,
-    score:0,
+    atWheel: false,
+    buyingVowel: false,
+    scoreMultiplier: 0,
+    score: 0,
     //wheel rotation duration (ms)
-    rotationTimeRange:{
+    rotationTimeRange: {
         min: 3000,
         max: 4500
     },
     //how many rounds before it stops
-    wheelRounds:{
-        min:2,
-        max:10
+    wheelRounds: {
+        min: 2,
+        max: 10
     },
     //degrees the wheel spins back before it stops
-    backSpin:{
-        min:1,
-        max:4
+    backSpin: {
+        min: 1,
+        max: 4
     },
     wheelRadius: 240,
     strokeColor: 0xffffff,
-    strokeWidth:5
+    strokeWidth: 5
 }
 
-window.onload = function(){
+window.onload = function () {
     var game = new Phaser.Game(config);
-    
+
 }
 function resize() {
     var canvas = document.querySelector("canvas");
@@ -113,11 +113,11 @@ function resize() {
     var windowHeight = window.innerHeight;
     var windowRatio = windowWidth / windowHeight;
     var gameRatio = game.config.width / game.config.height;
-    if(windowRatio < gameRatio){
+    if (windowRatio < gameRatio) {
         canvas.style.width = windowWidth + "px";
         canvas.style.height = (windowWidth / gameRatio) + "px";
     }
-    else{
+    else {
         canvas.style.width = (windowHeight * gameRatio) + "px";
         canvas.style.height = windowHeight + "px";
     }
