@@ -84,6 +84,7 @@ const gameOptions = {
     solving: false,
     scoreMultiplier: 0,
     score: 0,
+    solved: false,
     //wheel rotation duration (ms)
     rotationTimeRange: {
         min: 3000,

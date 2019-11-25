@@ -156,6 +156,14 @@ class Scene3 extends Phaser.Scene {
     }
     update() {
         this.currentLetter.tint = 0xffffff;
+        for (var i = 0; i < this.puzzleBoxes.length; i++) {
+            this.puzzleBoxes[i].tint = 0xffffff;
+            if (!this.puzzleBoxes[i].resolved) {
+                gameOptions.solved = false;
+                break;
+            }
+        }
+        gameOptions.solved = true;
         for (var i = consonantButtons.length - 1; i >= 0; i--) {
             if (!gameOptions.canSelect) {
                 consonantButtons[i].alpha = .25;
@@ -177,9 +185,11 @@ class Scene3 extends Phaser.Scene {
             }
             for (var i = 0; i < this.puzzleBoxes.length; i++) {
                 this.puzzleBoxes[i].tint = 0xffffff;
+
                 if (!this.puzzleBoxes[i].resolved) {
                     this.currentLetter = this.puzzleBoxes[i];
                     this.currentLetter.tint = 0x0000ff;
+                    gameOptions.solved = false;
                     break;
                 }
             }
