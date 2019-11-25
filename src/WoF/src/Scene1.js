@@ -17,7 +17,7 @@ class Scene1 extends Phaser.Scene {
   create() {
 
     this.scene2 = this.createWindow(Scene2, 800, 0);
-    this.scene3 = this.createWindow(Scene3, 175, 164);
+    this.scene3 = this.createWindow(Scene3, 175, 119);
     this.spinButton = this.scene3.add.image(350, 450, 'spinButton');
     this.vowelButton = this.scene3.add.image(420, 450, 'vowelButton');
     this.solveButton = this.scene3.add.image(490, 450, 'solveButton');
