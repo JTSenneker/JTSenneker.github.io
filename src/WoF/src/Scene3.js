@@ -107,7 +107,7 @@ class Scene3 extends Phaser.Scene {
 
             consonantButtons[i].setInteractive();
             consonantButtons[i].on('pointerup', function () {
-                if (!gameOptions.canSelect || !gameOptions.solving) return;
+                if (!gameOptions.canSelect && !gameOptions.solving) return;
                 console.log(this.text);
                 scene.CheckLetter(this.text);
                 if (!gameOptions.solving) this.text = " "
@@ -121,7 +121,7 @@ class Scene3 extends Phaser.Scene {
 
             vowelButtons[i].setInteractive();
             vowelButtons[i].on('pointerup', function () {
-                if (!gameOptions.buyingVowel || !gameOptions.solving) return;
+                if (!gameOptions.buyingVowel && !gameOptions.solving) return;
 
                 scene.CheckLetter(this.text);
                 if (!gameOptions.solving) this.text = " ";
