@@ -115,6 +115,7 @@ class Scene1 extends Phaser.Scene {
           onComplete: function (tween) {
             gameOptions.canSelect = true;
             gameOptions.atWheel = false;
+            this.scene2.wheelContainerContainer.setScale(1, .35);
           }
         });
       }
