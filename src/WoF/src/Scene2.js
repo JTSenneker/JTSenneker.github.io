@@ -88,6 +88,7 @@ class Scene2 extends Phaser.Scene {
       //tween that animation for the spin
       this.tweens.add({
         targets: [this.wheelContainerContainer],
+        y: 0,
         scaleY: 1,
         ease: "Cubic.easeOut",
         callbackScope: this
