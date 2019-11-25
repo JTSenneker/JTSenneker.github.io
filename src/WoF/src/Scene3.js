@@ -134,8 +134,9 @@ class Scene3 extends Phaser.Scene {
     CheckLetter(letter) {
         if (!gameOptions.solving) {
             for (var j = this.puzzleBoxes.length - 1; j >= 0; j--) {
-                console.log(this.puzzleBoxes[j].letter);
+
                 if (this.puzzleBoxes[j].resolved) continue;
+                console.log(this.puzzleBoxes[j].letter);
                 if (this.puzzleBoxes[j].letter.toUpperCase() == letter) {
                     this.add.text(this.puzzleBoxes[j].x, this.puzzleBoxes[j].y, letter, { fontSize: '36px', fill: '#4B4B4B' });
                     if (!this.isVowel(letter)) gameOptions.score += gameOptions.scoreMultiplier;
