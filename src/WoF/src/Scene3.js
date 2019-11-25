@@ -125,8 +125,8 @@ class Scene3 extends Phaser.Scene {
                 if (!gameOptions.buyingVowel && !gameOptions.solving) return;
                 var letter = this.text;
                 if (!gameOptions.solving) this.text = " ";
-                scene.CheckLetter(letter);
                 if (!gameOptions.solving) gameOptions.score -= 250;
+                scene.CheckLetter(letter);
                 gameOptions.canSelect = false;
                 gameOptions.buyingVowel = false;
             });
