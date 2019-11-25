@@ -11,7 +11,7 @@ class Scene3 extends Phaser.Scene {
     }
     create() {
         this.cameras.main.setViewport(this.parent.x, this.parent.y, this.WIDTH, this.HEIGHT);
-        this.add.image(-218, -162, 'background');
+        this.add.image(0, 0, 'background');
         this.setupPuzzle(puzzles[0]);
         this.setupButtons();
     }
