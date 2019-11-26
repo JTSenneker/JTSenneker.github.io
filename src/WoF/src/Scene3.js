@@ -46,6 +46,19 @@ class Scene3 extends Phaser.Scene {
                 frameRate: 20
             });
         }
+
+        row1Offset = (14 - puzzle.row1.length) / 2;
+        for (var i = 0; i < row1Offset; i++)puzzle.row1.push(" ");
+
+        row2Offset = (14 - puzzle.row2.length) / 2;
+        for (var i = 0; i < row2Offset; i++)puzzle.row2.push(" ");
+
+        row3Offset = (14 - puzzle.row3.length) / 2;
+        for (var i = 0; i < row3Offset; i++)puzzle.row3.push(" ");
+
+        row4Offset = (14 - puzzle.row1.length) / 2;
+        for (var i = 0; i < row4Offset; i++)puzzle.row4.push(" ");
+
         for (var i = 0; i < 14; i++) {
 
             if (i > puzzle.row1.length - 1) break;
