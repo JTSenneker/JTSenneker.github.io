@@ -48,16 +48,32 @@ class Scene3 extends Phaser.Scene {
         }
 
         var row1Offset = (14 - puzzle.row1.length) / 2;
-        for (var i = 0; i < row1Offset; i++)puzzle.row1.push(" ");
+        var buffer = "";
+        for (var i = 0; i < row1Offset; i++) {
+            buffer += " ";
+        }
+        puzzle.row1 = buffer + puzzle.row1;
 
         var row2Offset = (14 - puzzle.row2.length) / 2;
-        for (var i = 0; i < row2Offset; i++)puzzle.row2.push(" ");
+        buffer = "";
+        for (var i = 0; i < row2Offset; i++) {
+            buffer += " ";
+        }
+        puzzle.row2 = buffer + puzzle.row2;
 
         var row3Offset = (14 - puzzle.row3.length) / 2;
-        for (var i = 0; i < row3Offset; i++)puzzle.row3.push(" ");
+        buffer = "";
+        for (var i = 0; i < row3Offset; i++) {
+            buffer += " ";
+        }
+        puzzle.row3 = buffer + puzzle.row3;
 
         var row4Offset = (14 - puzzle.row1.length) / 2;
-        for (var i = 0; i < row4Offset; i++)puzzle.row4.push(" ");
+        buffer = "";
+        for (var i = 0; i < row4Offset; i++) {
+            buffer += " ";
+        }
+        puzzle.row4 = buffer + puzzle.row4;
 
         for (var i = 0; i < 14; i++) {
 
