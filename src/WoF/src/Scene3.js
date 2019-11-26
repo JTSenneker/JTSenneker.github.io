@@ -22,10 +22,10 @@ class Scene3 extends Phaser.Scene {
     setupPuzzle(puzzle) {
         category = puzzle.category;
         for (var i = 0; i < 14; i++) {
-            row1[i] = this.add.sprite((i * 32) + 175, 118 + 0, 'wordTile').setOrigin(0, 0);
-            row2[i] = this.add.sprite((i * 32) + 175, 118 + 64, 'wordTile').setOrigin(0, 0);
-            row3[i] = this.add.sprite((i * 32) + 175, 118 + 128, 'wordTile').setOrigin(0, 0);
-            row4[i] = this.add.sprite((i * 32) + 175, 118 + 192, 'wordTile').setOrigin(0, 0);
+            row1[i] = this.add.sprite((i * 32) + 174, 118 + 0, 'wordTile').setOrigin(0, 0);
+            row2[i] = this.add.sprite((i * 32) + 174, 118 + 64, 'wordTile').setOrigin(0, 0);
+            row3[i] = this.add.sprite((i * 32) + 174, 118 + 128, 'wordTile').setOrigin(0, 0);
+            row4[i] = this.add.sprite((i * 32) + 174, 118 + 192, 'wordTile').setOrigin(0, 0);
             row1[i].letter = " ";
             row2[i].letter = " ";
             row3[i].letter = " ";
