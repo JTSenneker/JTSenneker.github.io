@@ -47,28 +47,28 @@ class Scene3 extends Phaser.Scene {
             });
         }
 
-        var row1Offset = (14 - puzzle.row1.length) / 2;
+        var row1Offset = Math.floor((14 - puzzle.row1.length) / 2);
         var buffer = "";
         for (var i = 0; i < row1Offset; i++) {
             buffer += " ";
         }
         puzzle.row1 = buffer + puzzle.row1;
 
-        var row2Offset = (14 - puzzle.row2.length) / 2;
+        var row2Offset = Math.floor((14 - puzzle.row2.length) / 2);
         buffer = "";
         for (var i = 0; i < row2Offset; i++) {
             buffer += " ";
         }
         puzzle.row2 = buffer + puzzle.row2;
 
-        var row3Offset = (14 - puzzle.row3.length) / 2;
+        var row3Offset = Math.floor((14 - puzzle.row3.length) / 2);
         buffer = "";
         for (var i = 0; i < row3Offset; i++) {
             buffer += " ";
         }
         puzzle.row3 = buffer + puzzle.row3;
 
-        var row4Offset = (14 - puzzle.row1.length) / 2;
+        var row4Offset = Math.floor((14 - puzzle.row1.length) / 2);
         buffer = "";
         for (var i = 0; i < row4Offset; i++) {
             buffer += " ";
