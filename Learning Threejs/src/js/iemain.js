@@ -1,6 +1,7 @@
 //"use strict";
 
 var video = document.getElementById("video");
+var canvas = document.getElementById('canvas');
 var mousePrevDown = false;
 var isMouseDown = false;
 var mouseXOnDown = 0;
@@ -23,11 +24,11 @@ var cam = new THREE.PerspectiveCamera(
 cam.position.z = 0;
 cam.rotation.order = "YXZ";
 var rend = new THREE.WebGLRenderer({
-    antialias: true
+    canvas: canvas, antialias: true
 });
 rend.setClearColor("#4b4b4b");
 rend.setSize(window.innerWidth, window.innerHeight);
-document.body.appendChild(rend.domElement);
+//document.body.appendChild(rend.domElement);
 window.addEventListener("resize", function () {
     rend.setSize(window.innerWidth, window.innerHeight);
     cam.aspect = window.innerWidth / window.innerHeight;
