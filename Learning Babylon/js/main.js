@@ -40,7 +40,7 @@ var frameHotspots = [
         callback: function () { showHotspotDetails(this); },
         image: null
     }],//
-    [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], []
+    [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], []
 ];
 var hotspotButtons = [];
 var interiorHotspots = [{
@@ -104,11 +104,11 @@ var createExterior = function () {
     hotspotTitleGUI = new BABYLON.GUI.TextBlock();
     hotspotPanel = new BABYLON.GUI.Rectangle();
     hotspotDescriptionGUI = new BABYLON.GUI.TextBlock();
-    for (var i = 0; i < 32; i++) {
-        if (i < 9) turntableFrames[i] = new BABYLON.GUI.Image("img", "src/img/turnaround/Turntable 360 Spin Test_0" + (i + 1) + ".jpg");
-        else turntableFrames[i] = new BABYLON.GUI.Image("img", "src/img/turnaround/Turntable 360 Spin Test_" + (i + 1) + ".jpg");
-        turntableFrames[i].width = '1024px';
-        turntableFrames[i].height = '490px';
+    for (var i = 0; i < 59; i++) {
+        if (i < 9) turntableFrames[i] = new BABYLON.GUI.Image("img", "src/img/turnaround/BOLT_New_00" + (i + 1) + ".jpg");
+        else turntableFrames[i] = new BABYLON.GUI.Image("img", "src/img/turnaround/BOLT_New_0" + (i + 1) + ".jpg");
+        turntableFrames[i].width = '1920px';
+        turntableFrames[i].height = '1080px';
         //turntableFrames[i].autoScale = true;
         for (var j = 0; j < frameHotspots[i].length; j++) {
             frameHotspots[i][j].image = new BABYLON.GUI.Image("hotspotIcon", 'src/img/1x/hotspot.png');
@@ -117,7 +117,7 @@ var createExterior = function () {
 
     img = turntableFrames[frame];
 
-    scene.clearColor = new BABYLON.Color3((163 / 255), (160 / 255), (155 / 255));
+    scene.clearColor = new BABYLON.Color3(.84, .84, .84);
     //add a camera and attach it to the canvas
     var cam = new BABYLON.ArcRotateCamera('Camera', Math.PI / 2, Math.PI / 2, 2, new BABYLON.Vector3(0, 0, 5), scene);
     //cam.attachControl(canvas, true);
@@ -299,20 +299,20 @@ function changeImg(imageNumber) {
 
     imageNumber = Math.floor(imageNumber / 8);
     console.log(imageNumber);
-    if (imageNumber < -31) {
+    if (imageNumber < -58) {
         imageNumber = 0;
         mouseXOnDown = scene1.pointerX;
     }
-    else if (imageNumber > 31) {
+    else if (imageNumber > 58) {
         imageNumber = 0;
         mouseXOnDown = scene1.pointerX;
     }
     frame = startFrame + (imageNumber);
     if (frame < 0) {
-        frame += 31;
+        frame += 58;
         //mouseXOnDown = scene1.pointerX;
     }
-    if (frame > 31) frame -= 31;
+    if (frame > 58) frame -= 58;
     img = turntableFrames[frame];
     //advancedTexture.dispose();
     //createGUI(scene1, renderedScene);
