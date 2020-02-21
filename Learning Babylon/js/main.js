@@ -17,7 +17,7 @@ var frameHotspots = [
         title: "A Hotspot",
         description: "These hotspots are placed in various areas and hold information about the vehicle.",
         imagePath: "",
-        x: -10,
+        x: "-.75%",
         y: 0,
         callback: function () { showHotspotDetails(this); },
         image: null
@@ -26,7 +26,7 @@ var frameHotspots = [
         title: "A Hotspot",
         description: "These hotspots are placed in various areas and hold information about the vehicle.",
         imagePath: "",
-        x: -100,
+        x: "-5%",
         y: 0,
         callback: function () { showHotspotDetails(this); },
         image: null
@@ -35,7 +35,7 @@ var frameHotspots = [
         title: "A Hotspot",
         description: "These hotspots are placed in various areas and hold information about the vehicle.",
         imagePath: "",
-        x: -200,
+        x: "-8%",
         y: 0,
         callback: function () { showHotspotDetails(this); },
         image: null
@@ -107,9 +107,11 @@ var createExterior = function () {
     for (var i = 0; i < 59; i++) {
         if (i < 9) turntableFrames[i] = new BABYLON.GUI.Image("img", "src/img/turnaround/BOLT_New_00" + (i + 1) + ".jpg");
         else turntableFrames[i] = new BABYLON.GUI.Image("img", "src/img/turnaround/BOLT_New_0" + (i + 1) + ".jpg");
-        turntableFrames[i].width = '1920px';
-        turntableFrames[i].height = '1080px';
-        //turntableFrames[i].autoScale = true;
+        turntableFrames[i].stretch = BABYLON.GUI.Image.STRETCH_UNIFORM;
+        //turntableFrames[i].width = '100%';
+        //turntableFrames[i].height = '56.25%';
+        console.log(turntableFrames[i].width);
+
         for (var j = 0; j < frameHotspots[i].length; j++) {
             frameHotspots[i][j].image = new BABYLON.GUI.Image("hotspotIcon", 'src/img/1x/hotspot.png');
         }
@@ -258,6 +260,7 @@ engine.runRenderLoop(function () {
 //watch for browser/canvas resize events
 window.addEventListener('resize', function () {
     engine.resize();
+    scene1 = createExterior();
 });
 
 
