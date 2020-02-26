@@ -2,6 +2,49 @@
 <html lang="en-us">
 
 <head>
+  <style>
+    .clickable {
+      cursor: pointer;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      margin: auto;
+    }
+
+    .popup {
+      visibility: hidden;
+      position: absolute;
+      background: rgb(255, 255, 255);
+      box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, .5);
+
+      display: flex;
+      top: 50px;
+      left: 100px;
+      width: 700px;
+      height: 400px;
+      transform: translate(0px);
+      z-index: 1;
+      flex-direction: column;
+      box-sizing: border-box;
+      margin: auto;
+      padding-top: 0;
+    }
+
+    .show {
+      visibility: visible;
+    }
+
+    ol {
+      list-style-position: inside;
+      padding-left: 30px;
+    }
+
+    ul {
+      list-style-position: inside;
+    }
+  </style>
+
   <meta charset="utf-8">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>Unity WebGL Player | WebFeud</title>
@@ -12,6 +55,12 @@
   <script>
     var unityInstance = UnityLoader.instantiate("unityContainer", "Build/Family Feud.json", { onProgress: UnityProgress });
   </script>
+  <script>
+    function showPopup(id) {
+      var popup = document.getElementById(id);
+      popup.classList.toggle("show");
+    }
+  </script>
 </head>
 
 <body>
@@ -21,6 +70,16 @@
       <div class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
       <div>
         <h1>Instructions</h1>
+        <br>
+        <h2>Categories</h2>
+        <ol>
+          <li class=clickable onclick="showPopup('one')">What tools are available to boost sales and confidence?</li>
+          <li class=clickable onclick="showPopup('two')">What top skills should new sales consultants master for
+            success?</li>
+          <li class=clickable onclick="showPopup('three')">How are sales leads best handled?</li>
+          <li class=clickable onclick="showPopup('four')">How does Facebook help sales consultants?</li>
+        </ol>
+        <br>
         <h2>Controls</h2>
         <ul>
           <li>Reveal answer: 1-5</li>
@@ -30,6 +89,42 @@
           <li>Team 1 buzz in: left ctrl</li>
           <li>Team 2 buss in: spacebar</li>
         </ul>
+        <span class="popup" id="one" onclick="showPopup('one')">
+          <ol>
+            <li>SCIT</li>
+            <li>Learning Paths</li>
+            <li>Webinars</li>
+            <li>Facebook</li>
+            <li>Curated Assets</li>
+          </ol>
+        </span>
+        <span class="popup" id="two" onclick="showPopup('two')">
+          <ol>
+            <li>Relationships</li>
+            <li>Customer Needs</li>
+            <li>Vehicle Demo</li>
+            <li>Prospecting</li>
+            <li>Dealership Ops</li>
+          </ol>
+        </span>
+        <span class="popup" id="three" onclick="showPopup('three')">
+          <ol>
+            <li>Work With BDC</li>
+            <li>Count Each Lead</li>
+            <li>Follow-up</li>
+            <li>Have a Process</li>
+            <li>Responsiveness</li>
+          </ol>
+        </span>
+        <span class="popup" id="four" onclick="showPopup('four')">
+          <ol>
+            <li>Quick Answers</li>
+            <li>Peer-to-peer</li>
+            <li>Advice</li>
+            <li>How to Videos</li>
+            <li>Polling</li>
+          </ol>
+        </span>
       </div>
     </div>
   </div>
