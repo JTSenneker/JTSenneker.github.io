@@ -91,7 +91,7 @@ class Spinner extends Phaser.Scene {
                 }
                 if (wheelOptions.remainingDegrees.length > 1) wheelOptions.remainingDegrees.splice(degreesIndex, 1);
                 else {
-                    window.cpAPIInterface.setVariableValue("SpinCount", 4);
+                    window.cpAPIInterface.setVariableValue("SpinCount", "4");
                     wheelOptions.remainingDegrees = [0, 1, 2, 3];
                 }
                 console.log(wheelOptions.remainingDegrees);
