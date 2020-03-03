@@ -1,6 +1,6 @@
 var config = {
-    width: 888,
-    height: 500,
+    width: 1024,
+    height: 516,
     backgroundColor: 0xffffff,
     scene: [Spinner]
 }
