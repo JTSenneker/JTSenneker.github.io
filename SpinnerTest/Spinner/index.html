@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Rewards Spinner</title>
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <script type="text/javascript" src="./src/js/phaser.min.js"></script>
+    <script src="./src/js/Spinner.js"></script>
+    <script src="./src/js/game.js"></script>
+
+    <script>function togglePopup(id) {
+            var popup = document.getElementById(id);
+            popup.classList.toggle("show");
+        }
+        function setVariable(variableName, variableValue) {
+            window.parent.window.cpAPIInterface.setVariableValue("SpinCount", "4");
+        }
+    </script>
+
+</head>
+
+<body>
+    <div class="popup" id="one">
+        <div class="content">
+            <h1>Reaction</h1>
+            <p>“I don’t want another rewards app taking up space on my phone.”
+            </p>
+            <h1>Responses</h1>
+            <p>“You don’t need to download an app to use My GM Rewards. The My Brand App is just one way customers can
+                view
+                and redeem points. You can also view and redeem points using the My GM Rewards website.”
+            </p>
+        </div>
+        <img class="exitButton" src="src/img/Icons/close.png" onclick="togglePopup('one')">
+    </div>
+    <div class="popup" id="two">
+        <div class="content">
+            <h1>Reaction</h1>
+            <p>“Sorry, I don’t want to sign up for another program. I get enough emails.”</p>
+            <h1>Responses</h1>
+            <p>“I hear you. That’s why My GM Rewards will only email you with good news emails—for example, when you
+                have points to spend. ” 
+                <br><br>
+                “We don’t send many emails, but you can opt out of the email list at any time.”
+            </p>
+        </div>
+        <img class="exitButton" src="src/img/Icons/close.png" onclick="togglePopup('two')">
+    </div>
+    <div class="popup" id="three">
+        <div class="content">
+            <h1>Reaction</h1>
+            <p>“Sounds good. Sign me up!”</p>
+            <h1>Responses</h1>
+            <p>“Great! It’s easy. I’ll show you how."</p>
+        </div>
+        <img class="exitButton" src="src/img/Icons/close.png" onclick="togglePopup('three')">
+    </div>
+    <div class="popup" id="four">
+        <div class="content">
+            <h1>Reaction</h1>
+            <p>“No, I’m not interested in signing up.”</p>
+            <h1>Responses</h1>
+            <p>
+                Accept their refusal graciously and transition out of the My GM Rewards conversation:
+                “Of course, I can respect that. Let me show you that feature you had questions about."
+                “That’s totally fine. If you ever change your mind, just let us know.”
+                “No worries. You can enroll up to 30 days after purchase or 14 days after parts or service on the My GM
+                Rewards website, My Brand App or Owner Center if you change your mind.”
+            </p>
+        </div>
+        <img class="exitButton" src="src/img/Icons/close.png" onclick="togglePopup('four')">
+    </div>
+</body>
+
+</html>
