@@ -7,25 +7,25 @@ var config = {
 const wheelOptions = {
     slices: [{
         degrees: 90,
-        color: 0x3f6f95,
+        color: 0xaabb00,
         text: "Customer 1",
         id: "one"
     },
     {
         degrees: 90,
-        color: 0x3f6f95,
+        color: 0x00aabb,
         text: "Customer 2",
         id: "one"
     },
     {
         degrees: 90,
-        color: 0x3f6f95,
+        color: 0xaa00bb,
         text: "Customer 3",
         id: "one"
     },
     {
         degrees: 90,
-        color: 0x3f6f95,
+        color: 0xa0b0c0,
         text: "Customer 4",
         id: "one"
     }],
