@@ -95,8 +95,6 @@ class Spinner extends Phaser.Scene {
                 if (wheelOptions.remainingDegrees.length > 1) wheelOptions.remainingDegrees.splice(degreesIndex, 1);
                 else {
                     toggleHide("prompt");
-
-
                     setVariable("SpinCount", "4");
                     wheelOptions.remainingDegrees = [0, 1, 2, 3];
                 }
