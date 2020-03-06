@@ -4,6 +4,7 @@ class Spinner extends Phaser.Scene {
     }
     preload() {
         this.load.image('bg', 'src/img/bg.png');
+        this.load.image('marker', 'src/img/icons/Marker.png');
     }
     create() {
         var startDegrees = 0;
@@ -24,21 +25,24 @@ class Spinner extends Phaser.Scene {
             graphics.lineStyle(wheelOptions.strokeWidth, wheelOptions.strokeColor, 1);
             graphics.slice(wheelOptions.wheelRadius + wheelOptions.strokeWidth, wheelOptions.wheelRadius + wheelOptions.strokeWidth, wheelOptions.wheelRadius, Phaser.Math.DegToRad(startDegrees), Phaser.Math.DegToRad(startDegrees + wheelOptions.slices[i].degrees), false);
             graphics.strokePath();
-            let wedgeText = this.add.text(0, 0, wheelOptions.slices[i].text, { fontFamily: '"Arial"' });
+            /*let wedgeText = this.add.text(0, 0, wheelOptions.slices[i].text, { fontFamily: '"Arial"' });
             wedgeText.setOrigin(.5);
             wedgeText.setAlign('center');
             wedgeText.rotation = Phaser.Math.DegToRad(startDegrees + (wheelOptions.slices[i].degrees / 2) + 90);
             wedgeText.x = Math.cos(Phaser.Math.DegToRad(startDegrees + (wheelOptions.slices[i].degrees / 2))) * 100;
             wedgeText.y = Math.sin(Phaser.Math.DegToRad(startDegrees + (wheelOptions.slices[i].degrees / 2))) * 100;
-            this.wheelContainer.add(wedgeText);
+            this.wheelContainer.add(wedgeText);*/
             startDegrees += wheelOptions.slices[i].degrees;
-            console.log(wheelOptions.slices[i].text);
+
         }
         graphics.generateTexture("wheel", (wheelOptions.wheelRadius + wheelOptions.strokeWidth) * 2, (wheelOptions.wheelRadius + wheelOptions.strokeWidth) * 2);
         var wheel = this.add.sprite(0, 0, "wheel");
+        wheel.setInteractive();
         this.wheelContainer.add(wheel);
         this.wheelContainer.sendToBack(wheel);
-        this.input.on('pointerdown', this.spinWheel, this);
+        var marker = this.add.sprite(config.width / 18, config.height / 1.6, 'marker');
+        //this.wheelContainer.add(marker);
+        this.input.on('gameobjectdown', this.spinWheel, this);
         this.add.rectangle(0, 20, 400, 40, 0x138f9c).setOrigin(0, 0);
         this.add.text(30, 32, "Customer Reactions", { fontFamily: '"Arial"' });
         this.add.text(30, 90, "Spin the wheel below to see \nsome potential customer reactions", { fontFamily: '"Arial"', color: '#4b4b4b' });
@@ -46,7 +50,6 @@ class Spinner extends Phaser.Scene {
     }
 
     spinWheel() {
-        console.log(wheelOptions.remainingDegrees);
         let rounds = Phaser.Math.Between(wheelOptions.wheelRounds.min, wheelOptions.wheelRounds.max);
         let degreesIndex = Phaser.Math.Between(0, wheelOptions.remainingDegrees.length - 1);
         let degrees = wheelOptions.remainingDegrees[degreesIndex] * 90 + 45;
@@ -91,10 +94,12 @@ class Spinner extends Phaser.Scene {
                 }
                 if (wheelOptions.remainingDegrees.length > 1) wheelOptions.remainingDegrees.splice(degreesIndex, 1);
                 else {
+                    toggleHide("prompt");
+
+
                     setVariable("SpinCount", "4");
                     wheelOptions.remainingDegrees = [0, 1, 2, 3];
                 }
-                console.log(wheelOptions.remainingDegrees);
             }
         });
     }

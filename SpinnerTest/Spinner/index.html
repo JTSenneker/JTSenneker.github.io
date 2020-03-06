@@ -6,13 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Rewards Spinner</title>
     <link rel="stylesheet" type="text/css" href="./css/style.css">
-    <script type="text/javascript" src="./src/js/phaser.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/phaser@3.22.0/dist/phaser.js"></script>
     <script src="./src/js/Spinner.js"></script>
     <script src="./src/js/game.js"></script>
 
-    <script>function togglePopup(id) {
+    <script>
+        function togglePopup(id) {
             var popup = document.getElementById(id);
             popup.classList.toggle("show");
+        }
+        function toggleHide(tagName) {
+            var elem = document.getElementsByClassName(tagName);
+            console.log(elem);
+            var i;
+            for (i = 0; i < elem.length; i++) {
+                elem[i].classList.toggle("hide");
+            }
         }
         function setVariable(variableName, variableValue) {
             window.parent.window.cpAPIInterface.setVariableValue("SpinCount", "4");
@@ -24,7 +33,7 @@
 <body>
     <div class="popup" id="one">
         <div class="content">
-            <h1>Reaction</h1>
+            <h1>Joe's Reaction</h1>
             <p>“I don’t want another rewards app taking up space on my phone.”
             </p>
             <h1>Responses</h1>
@@ -32,12 +41,15 @@
                 view
                 and redeem points. You can also view and redeem points using the My GM Rewards website.”
             </p>
+            <p class="prompt" tag="spinAgain">Close this window and spin again to see another reaction.</p>
+            <p class="prompt hide" tag="continue">Click next to continue.</p>
         </div>
+
         <img class="exitButton" src="src/img/Icons/close.png" onclick="togglePopup('one')">
     </div>
     <div class="popup" id="two">
         <div class="content">
-            <h1>Reaction</h1>
+            <h1>Megan's Reaction</h1>
             <p>“Sorry, I don’t want to sign up for another program. I get enough emails.”</p>
             <h1>Responses</h1>
             <p>“I hear you. That’s why My GM Rewards will only email you with good news emails—for example, when you
@@ -45,21 +57,25 @@
                 <br><br>
                 “We don’t send many emails, but you can opt out of the email list at any time.”
             </p>
+            <p class="prompt" tag="spinAgain">Close this window and spin again to see another reaction.</p>
+            <p class="prompt hide" tag="continue">Click next to continue.</p>
         </div>
         <img class="exitButton" src="src/img/Icons/close.png" onclick="togglePopup('two')">
     </div>
     <div class="popup" id="three">
         <div class="content">
-            <h1>Reaction</h1>
+            <h1>Luis' Reaction</h1>
             <p>“Sounds good. Sign me up!”</p>
             <h1>Responses</h1>
             <p>“Great! It’s easy. I’ll show you how."</p>
+            <p class="prompt" tag="spinAgain">Close this windw and spin again to see another reaction.</p>
+            <p class="prompt hide" tag="continue">Click next to continue.</p>
         </div>
         <img class="exitButton" src="src/img/Icons/close.png" onclick="togglePopup('three')">
     </div>
     <div class="popup" id="four">
         <div class="content">
-            <h1>Reaction</h1>
+            <h1>Kate's Reaction</h1>
             <p>“No, I’m not interested in signing up.”</p>
             <h1>Responses</h1>
             <p>
@@ -69,6 +85,8 @@
                 “No worries. You can enroll up to 30 days after purchase or 14 days after parts or service on the My GM
                 Rewards website, My Brand App or Owner Center if you change your mind.”
             </p>
+            <p class="prompt" tag="spinAgain">Close this window and spin again to see another reaction.</p>
+            <p class="prompt hide" tag="continue">Click next to continue.</p>
         </div>
         <img class="exitButton" src="src/img/Icons/close.png" onclick="togglePopup('four')">
     </div>
