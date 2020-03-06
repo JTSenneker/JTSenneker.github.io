@@ -4,7 +4,7 @@ class Spinner extends Phaser.Scene {
     }
     preload() {
         this.load.image('bg', './src/img/bg.png');
-        this.load.image('marker', './src/img/icons/Marker.png');
+        this.load.image('marker', './src/img/Marker.png');
     }
     create() {
         var startDegrees = 0;
