@@ -14,6 +14,7 @@
         function togglePopup(id) {
             var popup = document.getElementById(id);
             popup.classList.toggle("show");
+            if (!popup.classList.contains("show")) wheelOptions.canSpin = true;
         }
         function toggleHide(tagName) {
             var elem = document.getElementsByClassName(tagName);

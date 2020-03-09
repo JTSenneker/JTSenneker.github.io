@@ -80,7 +80,7 @@ class Spinner extends Phaser.Scene {
 
             //execute this when tween is done
             onComplete: function (tween) {
-                wheelOptions.canSpin = true;
+
                 switch (wheelOptions.remainingDegrees[degreesIndex]) {
                     case 0:
                         togglePopup('one');
