@@ -50,6 +50,8 @@ class Spinner extends Phaser.Scene {
     }
 
     spinWheel() {
+        if (!wheelOptions.canSpin) return;
+        wheelOptions.canSpin = false;
         let rounds = Phaser.Math.Between(wheelOptions.wheelRounds.min, wheelOptions.wheelRounds.max);
         let degreesIndex = Phaser.Math.Between(0, wheelOptions.remainingDegrees.length - 1);
         let degrees = wheelOptions.remainingDegrees[degreesIndex] * 90 + 45;
@@ -78,6 +80,7 @@ class Spinner extends Phaser.Scene {
 
             //execute this when tween is done
             onComplete: function (tween) {
+                wheelOptions.canSpin = true;
                 switch (wheelOptions.remainingDegrees[degreesIndex]) {
                     case 0:
                         togglePopup('one');

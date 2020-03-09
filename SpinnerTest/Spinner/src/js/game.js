@@ -40,7 +40,8 @@ const wheelOptions = {
     strokeColor: 0xffffff,
     strokeWidth: 2,
     wheelRadius: 160,
-    remainingDegrees: [0, 1, 2, 3]
+    remainingDegrees: [0, 1, 2, 3],
+    canSpin: true
 }
 window.onload = function () {
     var game = new Phaser.Game(config);
