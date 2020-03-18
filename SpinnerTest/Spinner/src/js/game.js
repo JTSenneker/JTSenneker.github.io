@@ -1,34 +1,32 @@
 var config = {
-    width: 1024,
-    height: 516,
+    width: window.innerWidth,
+    height: window.innerHeight,
     backgroundColor: 0xffffff,
     scene: [Spinner]
 }
 const wheelOptions = {
+    ///////////////////////////////////////////////
+    ///////CONTROLS THE WEDGES ON THE WHEEL////////
+    ///////////////////////////////////////////////
     slices: [{
         degrees: 90,
-        color: 0xaabb00,
-        text: "Customer 1",
-        id: "one"
+        color: 0x114d7d,
     },
     {
         degrees: 90,
-        color: 0x00aabb,
-        text: "Customer 2",
-        id: "one"
+        color: 0xe6e6e6,
     },
     {
         degrees: 90,
-        color: 0xaa00bb,
-        text: "Customer 3",
-        id: "one"
+        color: 0x043257,
     },
     {
         degrees: 90,
-        color: 0xa0b0c0,
-        text: "Customer 4",
-        id: "one"
+        color: 0x4d4d4d,
     }],
+    ///////////////////////////////////////////////
+    ///////////////////////////////////////////////
+    ///////////////////////////////////////////////
     rotationTimeRange: {
         min: 3000,
         max: 4000

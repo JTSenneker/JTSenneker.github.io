@@ -3,7 +3,14 @@ class Spinner extends Phaser.Scene {
         super("spinner");
     }
     preload() {
+        //////////////////////////////////////////////////
+        ///////THE BACKGROUND IMAGE IS LOADED HERE////////
+        //////////////////////////////////////////////////
         this.load.image('bg', './src/img/bg.png');
+
+        //////////////////////////////////////////////////
+        /////////THE MARKER IMAGE IS LOADED HERE//////////
+        //////////////////////////////////////////////////
         this.load.image('marker', './src/img/Marker.png');
     }
     create() {
@@ -25,16 +32,9 @@ class Spinner extends Phaser.Scene {
             graphics.lineStyle(wheelOptions.strokeWidth, wheelOptions.strokeColor, 1);
             graphics.slice(wheelOptions.wheelRadius + wheelOptions.strokeWidth, wheelOptions.wheelRadius + wheelOptions.strokeWidth, wheelOptions.wheelRadius, Phaser.Math.DegToRad(startDegrees), Phaser.Math.DegToRad(startDegrees + wheelOptions.slices[i].degrees), false);
             graphics.strokePath();
-            /*let wedgeText = this.add.text(0, 0, wheelOptions.slices[i].text, { fontFamily: '"Arial"' });
-            wedgeText.setOrigin(.5);
-            wedgeText.setAlign('center');
-            wedgeText.rotation = Phaser.Math.DegToRad(startDegrees + (wheelOptions.slices[i].degrees / 2) + 90);
-            wedgeText.x = Math.cos(Phaser.Math.DegToRad(startDegrees + (wheelOptions.slices[i].degrees / 2))) * 100;
-            wedgeText.y = Math.sin(Phaser.Math.DegToRad(startDegrees + (wheelOptions.slices[i].degrees / 2))) * 100;
-            this.wheelContainer.add(wedgeText);*/
             startDegrees += wheelOptions.slices[i].degrees;
-
         }
+
         graphics.generateTexture("wheel", (wheelOptions.wheelRadius + wheelOptions.strokeWidth) * 2, (wheelOptions.wheelRadius + wheelOptions.strokeWidth) * 2);
         var wheel = this.add.sprite(0, 0, "wheel");
         wheel.setInteractive();
@@ -80,7 +80,6 @@ class Spinner extends Phaser.Scene {
 
             //execute this when tween is done
             onComplete: function (tween) {
-
                 switch (wheelOptions.remainingDegrees[degreesIndex]) {
                     case 0:
                         togglePopup('one');
