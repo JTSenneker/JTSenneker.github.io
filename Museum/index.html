@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./src/css/style.css">
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/phaser@3.22.0/dist/phaser.js"></script>
+    <script src="https://github.com/jdotrjs/phaser3-nineslice/releases/download/v0.5.0/nineslice.min.js"></script>
+    
+    <script>function togglePopup(id) {
+            console.log("clicked");
+            var popup = document.getElementById(id);
+            popup.classList.toggle("show");
+        }</script>
+        <script src="./src/js/UI.js"></script>
+        
+    <script type="text/javascript" src="./src/js/Awards.js"></script>
+    <script type="text/javascript" src="./src/js/Theater.js"></script>
+    <script type="text/javascript" src="./src/js/Entrance.js"></script>
+    <script type="text/javascript" src="./src/js/game.js"></script>
+
+    <title>Document</title>
+</head>
+
+<body>
+    <span class="popup" id="webTest">
+        <iframe id='video' width="95%" height="95%" src="https://www.youtube.com/embed/wK8nHn095I8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <img class="exitButton" src="src/img/Icons/close.png" onclick="togglePopup('webTest')">
+    </span>
+
+    <div class='dialogue' id = 'dialogue'>
+        <img src="src/img/Objects/PersonA.png" id='profileImage'>
+        <div id='dialogueBox'>
+        <p id='dialogueText'>This is where dialogue goes</p>
+        </div>
+    </div>
+</body>
+
+</html>
+
