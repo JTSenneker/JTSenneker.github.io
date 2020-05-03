@@ -47,7 +47,7 @@ var globals = {
     dialogueIndex:0,
     inDialogue:false,
     room: 0,
-    collisionAlpha: 0.25
+    collisionAlpha: 0
 }
 var dialogues = {
     guideIntro:{
