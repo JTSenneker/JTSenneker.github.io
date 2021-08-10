@@ -7,7 +7,7 @@
   </head>
   <body style="text-align: center">
     <canvas id="unity-canvas" width=1280 height=720 style="width: 1280px; height: 720px; background: #231F20"></canvas>
-    <script src="Build/Web.loader.js"></script>
+    <script src="Build/MagicalGirlArena.loader.js"></script>
     <script>
       if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
         // Mobile device style: fill the whole browser client area with the game canvas:
@@ -18,9 +18,9 @@
       }
 
       createUnityInstance(document.querySelector("#unity-canvas"), {
-        dataUrl: "Build/Web.data",
-        frameworkUrl: "Build/Web.framework.js",
-        codeUrl: "Build/Web.wasm",
+        dataUrl: "Build/MagicalGirlArena.data",
+        frameworkUrl: "Build/MagicalGirlArena.framework.js",
+        codeUrl: "Build/MagicalGirlArena.wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "JTSenneker",
         productName: "Magical Girl Arena",
@@ -29,7 +29,7 @@
         // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
       });
     </script>
-    <span>
+<span>
       <img src= "imgs/Controls.png">
     </span>
   </body>
