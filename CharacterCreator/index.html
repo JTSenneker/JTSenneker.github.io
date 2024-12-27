@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/Style/style.css">
+   
+    <title>DQ9 - Character</title>
+</head>
+<body>
+    <form id="charForm" action="">
+    <div class="tab">Body Type:
+        <p></p>
+        <button type="button" class="BdyTypeBtn" id="BodyTypeButton" onclick="SetBodyType(0)" style="background: url('assets/Images/M/Body/HeightButton2.png'); background-size: cover"></button>
+        <button type="button" class="BdyTypeBtn" id="BodyTypeButton" onclick="SetBodyType(1)" style="background: url('assets/Images/F/Body/HeightButton2.png'); background-size: cover"></button>
+    </div>
+    <div class="tab">Height:
+        <p>
+        <button type="button" class="HeightBtn" id="HeightButton0" onclick="SetHeight(0)"></button>
+        <button type="button" class="HeightBtn" id="HeightButton1" onclick="SetHeight(1)"></button>
+        <button type="button" class="HeightBtn" id="HeightButton2" onclick="SetHeight(2)"></button>
+        <button type="button" class="HeightBtn" id="HeightButton3" onclick="SetHeight(3)"></button>
+        <button type="button" class="HeightBtn" id="HeightButton4" onclick="SetHeight(4)"></button>
+    </p>
+    </div>
+    <div class="tab">Hairstyle:
+        <p>
+        <button type="button" class="HairBtn" id="HairstyleButton0" onclick="SetHairstyle(0)"></button>
+        <button type="button" class="HairBtn" id="HairstyleButton1" onclick="SetHairstyle(1)"></button>
+        <button type="button" class="HairBtn" id="HairstyleButton2" onclick="SetHairstyle(2)"></button>
+        <button type="button" class="HairBtn" id="HairstyleButton3" onclick="SetHairstyle(3)"></button>
+        <button type="button" class="HairBtn" id="HairstyleButton4" onclick="SetHairstyle(4)"></button>
+        <button type="button" class="HairBtn" id="HairstyleButton5" onclick="SetHairstyle(5)"></button>
+        <button type="button" class="HairBtn" id="HairstyleButton6" onclick="SetHairstyle(6)"></button>
+        <button type="button" class="HairBtn" id="HairstyleButton7" onclick="SetHairstyle(7)"></button>
+        <button type="button" class="HairBtn" id="HairstyleButton8" onclick="SetHairstyle(8)"></button>
+        <button type="button" class="HairBtn" id="HairstyleButton9" onclick="SetHairstyle(9)"></button>
+    </p>
+    </div>
+    <div class="tab">Hair Colour:
+        <p>
+        <button type="button" class="HCBtn" id="HairColourButton0" onclick="SetHairColour(0)"></button>
+        <button type="button" class="HCBtn" id="HairColourButton1" onclick="SetHairColour(1)"></button>
+        <button type="button" class="HCBtn" id="HairColourButton2" onclick="SetHairColour(2)"></button>
+        <button type="button" class="HCBtn" id="HairColourButton3" onclick="SetHairColour(3)"></button>
+        <button type="button" class="HCBtn" id="HairColourButton4" onclick="SetHairColour(4)"></button>
+        <button type="button" class="HCBtn" id="HairColourButton5" onclick="SetHairColour(5)"></button>
+        <button type="button" class="HCBtn" id="HairColourButton6" onclick="SetHairColour(6)"></button>
+        <button type="button" class="HCBtn" id="HairColourButton7" onclick="SetHairColour(7)"></button>
+        <button type="button" class="HCBtn" id="HairColourButton8" onclick="SetHairColour(8)"></button>
+        <button type="button" class="HCBtn" id="HairColourButton9" onclick="SetHairColour(9)"></button>
+    </p>
+    </div>
+    <div class="tab">Face:
+        <p></p>
+        <button type="button" class="FaceBtn" id="FaceButton0" onclick="SetFace(0)"></button>
+        <button type="button" class="FaceBtn" id="FaceButton1" onclick="SetFace(1)"></button>
+        <button type="button" class="FaceBtn" id="FaceButton2" onclick="SetFace(2)"></button>
+        <button type="button" class="FaceBtn" id="FaceButton3" onclick="SetFace(3)"></button>
+        <button type="button" class="FaceBtn" id="FaceButton4" onclick="SetFace(4)"></button>
+        <button type="button" class="FaceBtn" id="FaceButton5" onclick="SetFace(5)"></button>
+        <button type="button" class="FaceBtn" id="FaceButton6" onclick="SetFace(6)"></button>
+        <button type="button" class="FaceBtn" id="FaceButton7" onclick="SetFace(7)"></button>
+        <button type="button" class="FaceBtn" id="FaceButton8" onclick="SetFace(8)"></button>
+        <button type="button" class="FaceBtn" id="FaceButton9" onclick="SetFace(9)"></button>
+    </div>
+    <div class="tab">Skin Colour:
+        ><p></p>
+        <button type="button" class="SkinBtn" id="SkinButton0" onclick="SetSkin(0)"></button>
+        <button type="button" class="SkinBtn" id="SkinButton1" onclick="SetSkin(1)"></button>
+        <button type="button" class="SkinBtn" id="SkinButton2" onclick="SetSkin(2)"></button>
+        <button type="button" class="SkinBtn" id="SkinButton3" onclick="SetSkin(3)"></button>
+        <button type="button" class="SkinBtn" id="SkinButton4" onclick="SetSkin(4)"></button>
+        <button type="button" class="SkinBtn" id="SkinButton5" onclick="SetSkin(5)"></button>
+        <button type="button" class="SkinBtn" id="SkinButton6" onclick="SetSkin(6)"></button>
+        <button type="button" class="SkinBtn" id="SkinButton7" onclick="SetSkin(7)"></button>
+    </div>
+    <div class="tab">Eye Colour:
+        <p></p>
+        <button type="button" class="EyeBtn" id="EyeButton0" onclick="SetEye(0)"></button>
+        <button type="button" class="EyeBtn" id="EyeButton1" onclick="SetEye(1)"></button>
+        <button type="button" class="EyeBtn" id="EyeButton2" onclick="SetEye(2)"></button>
+        <button type="button" class="EyeBtn" id="EyeButton3" onclick="SetEye(3)"></button>
+        <button type="button" class="EyeBtn" id="EyeButton4" onclick="SetEye(4)"></button>
+        <button type="button" class="EyeBtn" id="EyeButton5" onclick="SetEye(5)"></button>
+        <button type="button" class="EyeBtn" id="EyeButton6" onclick="SetEye(6)"></button>
+        <button type="button" class="EyeBtn" id="EyeButton7" onclick="SetEye(7)"></button>
+    </div>
+    <div class="tab">Vocation:
+        <p></p>
+        <button type="button" class="VocBtn" id="ARMButton" onclick="SetVoc(0)">Armamentalist</button>
+        <button type="button" class="VocBtn" id="GLDButton" onclick="SetVoc(1)">Gladiator</button>
+        <button type="button" class="VocBtn" id="LMNButton" onclick="SetVoc(2)">Luminary</button>
+        <button type="button" class="VocBtn" id="MGEButton" onclick="SetVoc(3)">Mage</button>
+        <button type="button" class="VocBtn" id="MRTButton" onclick="SetVoc(4)">Martial Artist</button>
+        <button type="button" class="VocBtn" id="MINButton" onclick="SetVoc(5)">Minstrel</button>
+        <button type="button" class="VocBtn" id="PLDButton" onclick="SetVoc(6)">Paladin</button>
+        <button type="button" class="VocBtn" id="PRIButton" onclick="SetVoc(7)">Priest</button>
+        <button type="button" class="VocBtn" id="RNGButton" onclick="SetVoc(8)">Ranger</button>
+        <button type="button" class="VocBtn" id="SGEButton" onclick="SetVoc(9)">Sage</button>
+        <button type="button" class="VocBtn" id="THFButton" onclick="SetVoc(10)">Thief</button>
+        <button type="button" class="VocBtn" id="WARButton" onclick="SetVoc(11)">Warrior</button>
+    </div>
+    <div class="tab">Congratulations! Here is your character code:
+        <h1 id="CharacterCode">Code Goes Here</h1>
+        <p>use this when redeeming "Create a Character"</p>
+    </div>
+
+    <div>
+        <div class="navigation">
+          <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+          <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+        </div>
+      </div>
+      
+      <!-- Circles which indicates the steps of the form: -->
+      <div style="text-align:center;margin-top:40px;">
+        <span class="step"></span>
+        <span class="step"></span>
+        <span class="step"></span>
+        <span class="step"></span>
+        <span class="step"></span>
+        <span class="step"></span>
+        <span class="step"></span>
+        <span class="step"></span>
+        <span class="step"></span>
+      </div>
+</form>
+<script src="assets/Code/code.js"></script>
+</body>
+</html>
