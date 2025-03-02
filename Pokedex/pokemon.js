@@ -34,27 +34,36 @@ function displayPokemon(pokemon){
         const pokemonID = pokemon.url.split("/")[6];
         const listItem = document.createElement("div");
         listItem.className = "list-item";
+
+        var imgURL = "./assets/Pokemon/Pokemon_"+pokemonID+".png";
+
+        
         listItem.innerHTML = `
             <div class="number-wrap">
                 <p class="caption-fonts">#${pokemonID}</p>
             </div>
             <div class="image-wrap">
-                <img src="./assets/Pokemon/Pokemon_${pokemonID}.png" alt="${pokemon.name}" class="pokemon-image">
+                <img src="${imgURL}" onerror='this.src= "./assets/Pokemon/error.png"; console.clear();' alt="${pokemon.name}" class="pokemon-image">
             </div>
             <div class="name-wrap">
                 <p class="body3-fonts">${pokemon.name}</p>
             </div>
         `;
 
-        /*listItem.addEventListener("click", async () => {
-            const success = await fetchPokemonDataBeforeRedirect(pokemonID);
-            if (success){
-                window.location.href = `./detail.html?id=${pokemonID}`;
-            }
-        });*/
-
         listWrapper.appendChild(listItem);
+        
     })
+}
+
+function checkImage(url,callback){
+    const img = new Image();
+    img.onload = () =>{
+        callback(true);
+    };
+    img.onerror = () =>{
+        callback(false);
+    };
+    img.src = url;
 }
 
 searchInput.addEventListener("keyup", handleSearch);
