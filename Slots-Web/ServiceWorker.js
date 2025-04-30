@@ -1,9 +1,9 @@
 const cacheName = "DefaultCompany-Slots-1.0";
 const contentToCache = [
     "Build/Slots-Web.loader.js",
-    "Build/Slots-Web.framework.js.br",
-    "Build/Slots-Web.data.br",
-    "Build/Slots-Web.wasm.br",
+    "Build/Slots-Web.framework.js",
+    "Build/Slots-Web.data",
+    "Build/Slots-Web.wasm",
     "TemplateData/style.css"
 
 ];
