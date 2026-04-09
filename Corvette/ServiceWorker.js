@@ -1,9 +1,9 @@
 const cacheName = "GP Strategies-Corvette Quiz-0.1";
 const contentToCache = [
-    "Build/Builds.loader.js",
-    "Build/Builds.framework.js.br",
-    "Build/Builds.data.br",
-    "Build/Builds.wasm.br",
+    "Build/Corvette.loader.js",
+    "Build/Corvette.framework.js",
+    "Build/Corvette.data",
+    "Build/Corvette.wasm",
     "TemplateData/style.css"
 
 ];
